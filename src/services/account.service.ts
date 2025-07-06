@@ -7,3 +7,7 @@ export const create = async(userId: string, hashedPassword: string) => {
         provider: 'credentials'
     })
 }
+
+export const findOnebyUserId = async(userId: string) => {
+    return await Account.findOne({userId})
+}
