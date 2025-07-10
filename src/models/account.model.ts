@@ -4,8 +4,9 @@ const accountSchema = new mongoose.Schema(
     {
         userId: {type: mongoose.Types.ObjectId, ref: 'User', required: true},
         provider: {type: String, enum: ['credentials', 'google'], required: true},
-        provider_id: {type: String, required: true},
-        password: {type: String, required: true}
+        providerId: {type: String, required: true},
+        password: {type: String, required: true},
+        isActived: {type: Boolean, required: true, default: 0}
     },
     {
         timestamps: true

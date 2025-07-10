@@ -4,6 +4,7 @@ const sessionSchema = new Schema(
     {
         userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
         token: { type: String, required: true },
+        accountId: { type: String, required: true},
         provider: { type: String, required: true},
         expiresAt: { type: Date, required: true }
     },

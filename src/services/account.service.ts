@@ -1,10 +1,11 @@
 import Account from "../models/account.model"
 
-export const create = async(userId: string, hashedPassword: string) => {
+export const create = async(userId: string, hashedPassword: string, provider: string, providerId: string) => {
     return await Account.create({
-        userId, 
+        userId,
         password: hashedPassword, 
-        provider: 'credentials'
+        provider,
+        providerId
     })
 }
 

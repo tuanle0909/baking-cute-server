@@ -1,7 +1,11 @@
 import { Router } from "express"
-import { accountController } from "../controllers/account.controller";
+import { activate, changePassword, requestResetPassword, resetPassword } from "../controllers/account.controller";
+import { authenticate } from "../middlewares/authenticate";
 
 const accountRouter = Router();
 
-const { login } = accountController
-// accountRouter.post()
+accountRouter.get('/activate', activate)
+accountRouter.post('/change-password', authenticate, changePassword)
+accountRouter.post('/request-reset-password', requestResetPassword)
+accountRouter.post('/reset-password', resetPassword)
+export default accountRouter
